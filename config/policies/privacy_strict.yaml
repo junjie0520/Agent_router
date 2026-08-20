@@ -1,0 +1,27 @@
+policy_id: privacy_strict
+name: 隐私严格
+description: 保护用户数据安全，绝不妥协
+priority: 3
+
+rules:
+  - id: CREDENTIALS_BLOCK_CLOUD
+    condition: "has_credentials == true"
+    action: "force_local_only"
+    priority: 100
+
+  - id: PII_BLOCK_CLOUD
+    condition: "has_pii == true"
+    action: "force_local_or_tee"
+    priority: 90
+
+  - id: INTERNAL_CONFIG_LOCAL
+    condition: "has_internal_config == true"
+    action: "force_local_only"
+    priority: 80
+
+  - id: NO_SENSITIVE_NORMAL
+    condition: "privacy_level == 'none'"
+    action: "allow_any"
+    priority: 10
+
+default_model: mock-tee

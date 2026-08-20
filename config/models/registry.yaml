@@ -1,0 +1,33 @@
+models:
+  - id: "mock-cheap"
+    name: "Cheap Model"
+    provider: "mock"
+    cost_per_1k_input_tokens: 0.001
+    cost_per_1k_output_tokens: 0.002
+    latency_ms: 100
+    capabilities: ["unsafe","simple-qa", "classification", "summarization"]
+    supports_tee: false
+    is_local: false
+    privacy_compliant: false
+
+  - id: "mock-strong"
+    name: "Strong Model"
+    provider: "mock"
+    cost_per_1k_input_tokens: 0.01
+    cost_per_1k_output_tokens: 0.03
+    latency_ms: 800
+    capabilities: ["unsafe","code", "reasoning", "long-context", "tool-use", "creative-writing", "data-analysis"]
+    supports_tee: false
+    is_local: false
+    privacy_compliant: false
+
+  - id: "mock-tee"
+    name: "TEE Secure Model"
+    provider: "mock"
+    cost_per_1k_input_tokens: 0.05
+    cost_per_1k_output_tokens: 0.10
+    latency_ms: 1200
+    capabilities: ["safe","code", "reasoning", "privacy-safe", "long-context"]
+    supports_tee: true
+    is_local: true
+    privacy_compliant: true

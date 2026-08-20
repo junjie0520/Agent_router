@@ -1,0 +1,27 @@
+policy_id: cost_first
+name: 成本优先
+description: 在满足基本质量要求的前提下，选择成本最低的模型
+priority: 1
+
+rules:
+  - id: CRITICAL_PRIVACY
+    condition: "privacy_level in ['critical', 'high']"
+    action: "force_local_or_tee"
+    priority: 100
+
+  - id: SIMPLE_TASK_CHEAP
+    condition: "complexity_score < 3"
+    action: "select_cheapest"
+    priority: 50
+
+  - id: MEDIUM_TASK_BALANCED
+    condition: "complexity_score >= 3 and complexity_score < 7"
+    action: "select_cost_effective"
+    priority: 40
+
+  - id: COMPLEX_TASK_CAPABLE
+    condition: "complexity_score >= 7"
+    action: "select_cheapest_capable"
+    priority: 30
+
+default_model: mock-cheap

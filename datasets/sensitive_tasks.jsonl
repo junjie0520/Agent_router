@@ -1,0 +1,2 @@
+{"task_id": "sens-001", "task_type": "sensitive", "content": "My API key is sk-abc123def456. How do I rotate it?", "privacy_level": "critical", "expected_model": "mock-tee", "pii_types": ["api_key"]}
+{"task_id": "sens-002", "task_type": "sensitive", "content": "Please send the report to john.doe@company.com, phone: 13800138000", "privacy_level": "high", "expected_model": "mock-tee", "pii_types": ["email", "phone"]}

@@ -1,0 +1,3 @@
+{"task_id": "code-001", "task_type": "code_gen", "content": "Write a Python function to sort a list of dictionaries by a specific key.", "privacy_level": "none", "expected_model": "mock-cheap"}
+{"task_id": "code-002", "task_type": "code_refactor", "content": "Refactor this function to use async/await: async def fetch_data...", "privacy_level": "none", "expected_model": "mock-strong"}
+{"task_id": "code-003", "task_type": "code_gen", "content": "Generate unit tests for a payment processing module that handles credit cards.", "privacy_level": "high", "expected_model": "mock-tee"}

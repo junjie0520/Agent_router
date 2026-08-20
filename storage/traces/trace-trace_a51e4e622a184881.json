@@ -1,0 +1,23 @@
+{
+  "trace_id": "trace_a51e4e622a184881",
+  "request_id": "req_20260817194417061955",
+  "start_time": "2026-08-17T19:44:17.062984",
+  "end_time": "2026-08-17T19:44:26.280149",
+  "total_duration_ms": 9217.164,
+  "spans": [
+    {
+      "name": "router_request",
+      "trace_id": "trace_a51e4e622a184881",
+      "span_id": "trace_a51e4e622a184881.1",
+      "parent_span_id": null,
+      "start_time": "2026-08-17T19:44:17.062984",
+      "end_time": "2026-08-17T19:44:26.280149",
+      "duration_ms": 9217.164,
+      "status": "ok",
+      "metadata": {
+        "request_id": "req_20260817194417061955"
+      }
+    }
+  ],
+  "metadata": {}
+}

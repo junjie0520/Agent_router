@@ -1,0 +1,27 @@
+policy_id: quality_first
+name: 质量优先
+description: 在预算允许范围内，选择输出质量最高的模型
+priority: 2
+
+rules:
+  - id: CRITICAL_PRIVACY
+    condition: "privacy_level in ['critical', 'high']"
+    action: "force_local_or_tee"
+    priority: 100
+
+  - id: CODE_TASK_STRONG
+    condition: "task_type in ['code_gen', 'code_refactor']"
+    action: "select_best_code_model"
+    priority: 60
+
+  - id: COMPLEX_REASONING
+    condition: "complexity_score >= 7"
+    action: "select_strongest"
+    priority: 50
+
+  - id: DEFAULT_QUALITY
+    condition: "true"
+    action: "select_highest_capability"
+    priority: 10
+
+default_model: mock-strong

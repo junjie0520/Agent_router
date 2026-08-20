@@ -1,0 +1,32 @@
+policy_id: balanced
+name: 均衡策略
+description: 在成本、质量、隐私之间找到最佳平衡点
+priority: 0
+
+rules:
+  - id: CRITICAL_PRIVACY
+    condition: "privacy_level in ['critical', 'high']"
+    action: "force_local_or_tee"
+    priority: 100
+
+  - id: HIGH_COMPLEXITY_QUALITY
+    condition: "complexity_score >= 7"
+    action: "select_strongest_in_budget"
+    priority: 60
+
+  - id: LOW_COMPLEXITY_COST
+    condition: "complexity_score < 3"
+    action: "select_cheapest"
+    priority: 50
+
+  - id: MEDIUM_BALANCED
+    condition: "complexity_score >= 3 and complexity_score < 7"
+    action: "select_best_value"
+    priority: 40
+
+  - id: BUDGET_OVERRUN
+    condition: "budget_exceeded == true"
+    action: "downgrade_to_cheaper"
+    priority: 30
+
+default_model: mock-cheap

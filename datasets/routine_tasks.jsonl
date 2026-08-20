@@ -1,0 +1,3 @@
+{"task_id": "routine-001", "task_type": "simple_qa", "content": "What is the capital of France?", "privacy_level": "none", "expected_model": "mock-cheap"}
+{"task_id": "routine-002", "task_type": "summarization", "content": "Summarize this paragraph: The quick brown fox jumps over the lazy dog.", "privacy_level": "none", "expected_model": "mock-cheap"}
+{"task_id": "routine-003", "task_type": "simple_qa", "content": "Explain the difference between HTTP and HTTPS.", "privacy_level": "none", "expected_model": "mock-cheap"}
